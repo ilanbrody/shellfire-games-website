@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ShellFire Games — Independent game development studio.">
+  <title>ShellFire Games | Official Website</title>
+  <style>
+    :root {
+      --bg: #090b10;
+      --surface: #151922;
+      --orange: #ff7839;
+      --text: #f6f6f8;
+      --muted: #a5aab6;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 20px 7%;
+      background: rgba(9,11,16,.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: white;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .brand span { color: var(--orange); }
+
+    .links { display: flex; gap: 22px; flex-wrap: wrap; }
+
+    .links a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .links a:hover { color: var(--orange); }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(
+        ellipse at bottom,
+        #4d2017 0%,
+        #16121a 42%,
+        #090b10 80%
+      );
+    }
+
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: #ff5929;
+      filter: blur(130px);
+      opacity: .16;
+      animation: pulse 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(.8); opacity: .12; }
+      50% { transform: scale(1.3); opacity: .25; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: rise 1s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      letter-spacing: 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 110px);
+      margin: 22px 0;
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    h1 span { color: var(--orange); }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--orange);
+      color: #15100e;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: .25s;
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 35px #ff783955;
+    }
+
+    section.content {
+      max-width: 1150px;
+      margin: auto;
+      padding: 110px 25px;
+    }
+
+    h2 { font-size: 38px; margin-bottom: 16px; }
+
+    .subtitle {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .game-card {
+      background: var(--surface);
+      border: 1px solid #2b2d37;
+      border-radius: 12px;
+      padding: 35px;
+      transition: .3s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--orange);
+    }
+
+    .game-card h3 { font-size: 26px; }
+
+    .game-card p { color: var(--muted); line-height: 1.7; }
+
+    .tag {
+      color: var(--orange);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact {
+      text-align: center;
+      background: #11141b;
+      padding: 90px 20px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #777d89;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      nav { flex-direction: column; }
+      .links { justify-content: center; gap: 15px; }
+      h2 { font-size: 30px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home" class="brand">SHELL<span>FIRE</span> GAMES</a>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="glow"></div>
+    <div class="hero-content">
+      <div class="eyebrow">INDEPENDENT GAME STUDIO</div>
+      <h1>SHELL<span>FIRE</span><br>GAMES</h1>
+      <p>Forging new worlds. Creating unforgettable experiences.
+      Welcome to the next generation of our games.</p>
+      <a class="button" href="#games">Explore Our Games</a>
+    </div>
+  </header>
+
+  <section class="content" id="games">
+    <div class="eyebrow">OUR PROJECTS</div>
+    <h2>Games We're Creating</h2>
+    <p class="subtitle">Discover the worlds we're building.</p>
+
+    <div class="game-grid">
+      <article class="game-card">
+        <div class="tag">In Development</div>
+        <h3>Elementfall</h3>
+        <p>A turn-based elemental card strategy game.
+        Build your deck, command your units, and master
+        the battlefield.</p>
+      </article>
+
+      <article class="game-card">
+        <div class="tag">More to Come</div>
+        <h3>Future Projects</h3>
+        <p>We're just getting started. Stay tuned for
+        new worlds, new challenges, and future releases.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="content" id="about">
+    <div class="eyebrow">WHO WE ARE</div>
+    <h2>About ShellFire Games</h2>
+    <p class="subtitle">
+      ShellFire Games is an independent game development
+      studio founded by two developers with a shared
+      passion for creating memorable gaming experiences.
+      We believe great games begin with great ideas.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">GET IN TOUCH</div>
+    <h2>Contact Us</h2>
+    <p class="subtitle" style="margin: 0 auto 30px">
+      Business inquiries, collaborations, player feedback,
+      and general questions.
+    </p>
+    <a class="button" href="mailto:contact@shellfiregames.com">
+      Email ShellFire Games
+    </a>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> ShellFire Games.
+    All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
