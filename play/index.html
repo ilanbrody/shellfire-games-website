@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Play Elementfall | Shellfire Games</title>
+  <meta name="description" content="Play Elementfall, an online elemental card strategy game by Shellfire Games, directly in your browser.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #090d18;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .game-container {
+      width: 100%;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      background: #111827;
+      border-bottom: 1px solid #293246;
+    }
+
+    .brand {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .topbar a {
+      color: #d6dce8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .topbar a:hover {
+      color: white;
+    }
+
+    iframe {
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      border: none;
+      background: #090d18;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game-container">
+    <header class="topbar">
+      <span class="brand">ELEMENTFALL</span>
+      <a href="/">Shellfire Games</a>
+    </header>
+
+    <iframe
+      src="https://elementfall-game.tiny-feather-28ea.workers.dev/"
+      title="Play Elementfall"
+      allow="fullscreen; autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
