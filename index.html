@@ -353,6 +353,43 @@
       text-transform: uppercase;
     }
 
+    /* ELEMENTFALL GAME PREVIEW */
+
+    .elementfall-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .elementfall-image-link {
+      display: block;
+      margin-top: 22px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ffffff20;
+      background: #0b0d14;
+    }
+
+    .elementfall-image {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .elementfall-image-link:hover .elementfall-image {
+      transform: scale(1.05);
+    }
+
+    .elementfall-card .play-button {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .elementfall-description {
+      margin-bottom: 28px;
+    }
+
     /* ABOUT */
 
     .about-panel {
@@ -457,6 +494,10 @@
       .content {
         padding: 75px 20px;
       }
+
+      .elementfall-image {
+        height: 190px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -553,18 +594,41 @@
 
     <div class="game-grid">
 
-      <article class="game-card">
-        <div class="tag">In Development</div>
+      <!-- ELEMENTFALL -->
+
+      <article class="game-card elementfall-card">
+
+        <div class="tag">In Development · Playable Online</div>
+
+        <a
+          href="/play/"
+          class="elementfall-image-link"
+          aria-label="Play Elementfall"
+        >
+          <img
+            src="elementfall-banner.png"
+            alt="Elementfall game artwork"
+            class="elementfall-image"
+            loading="lazy"
+          >
+        </a>
 
         <h3>Elementfall</h3>
 
-        <p>
+        <p class="elementfall-description">
           Enter a world of elemental strategy.
           Build powerful decks, summon creatures,
           capture territory, and outsmart your
           opponents in tactical turn-based battles.
         </p>
+
+        <a href="/play/" class="button play-button">
+          PLAY ELEMENTFALL
+        </a>
+
       </article>
+
+      <!-- FUTURE PROJECTS -->
 
       <article class="game-card">
         <div class="tag">Future Projects</div>
